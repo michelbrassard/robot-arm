@@ -29,19 +29,22 @@ void setup() {
   servo5.write(0);
 
   delay(1000);
+
+  Serial.println("Started");
 }
 
 void loop() {
-  servo1.write(20);
-  delay(1000);
-  servo2.write(20);
-  delay(1000);
-  servo3.write(20);
-  delay(1000);
-  servo4.write(20);
-  delay(1000);
-  servo5.write(20);
-  delay(1000);
-  
+  servo1.write(60);
+  servo2.write(60);
+  servo3.write(60);
+  servo4.write(60);
+  servo5.write(60);
+  delay(2000);
+  servo1.write(0);
+  servo2.write(0);
+  servo3.write(0);
+  servo4.write(0);
+  servo5.write(0);
+  delay(2000);
 }
 
