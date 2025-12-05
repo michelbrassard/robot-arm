@@ -28,23 +28,36 @@ void setup() {
   servo4.write(0);
   servo5.write(0);
 
-  delay(1000);
+  delay(3000);
 
   Serial.println("Started");
 }
 
 void loop() {
-  servo1.write(60);
-  servo2.write(60);
-  servo3.write(60);
-  servo4.write(60);
-  servo5.write(60);
-  delay(2000);
-  servo1.write(0);
-  servo2.write(0);
-  servo3.write(0);
-  servo4.write(0);
-  servo5.write(0);
-  delay(2000);
+  while (Serial.available() > 0) {
+    int input_char = Serial.read();
+
+    if (isDigit(input_char)) {
+      
+      int degrees = (input_char - 48) * 10;
+      Serial.println("Rotate for 3 seconds...");
+      servo1.write(degrees);
+      servo2.write(degrees);
+      servo3.write(degrees);
+      servo4.write(degrees);
+      servo5.write(degrees);
+      delay(3000);
+      Serial.println("Back to zero");
+      servo1.write(0);
+      servo2.write(0);
+      servo3.write(0);
+      servo4.write(0);
+      servo5.write(0);
+      delay(3000);
+    }
+    
+
+    
+  }
 }
 
