@@ -40,7 +40,8 @@ void loop() {
     Serial.print("Entered: ");
     Serial.println(string);
 
-    // TODO: napravi string s 12 charactera, 4x3, 000090... (kut 0, kut 9)
+    // TODO: napravi string s 12 charactera, 4x3, 000090120180... (kut 0, kut 90, 120, 180)
+    // Tako da bufferom samo svaki treci substring uzmes
 
     // if (number == 0 || number > 180) {
     //   return;
