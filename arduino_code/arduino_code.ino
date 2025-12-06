@@ -35,20 +35,22 @@ void setup() {
 
 void loop() {
   while (Serial.available() > 0) {
-    int number = Serial.parseInt();
+    String string = Serial.readString();
 
     Serial.print("Entered: ");
-    Serial.println(number);
+    Serial.println(string);
 
-    if (number == 0 || number > 180) {
-      return;
-    }
+    // TODO: napravi string s 12 charactera, 4x3, 000090... (kut 0, kut 9)
 
-    servo1.write(number);
-    servo2.write(number);
-    servo3.write(number);
-    servo4.write(number);
-    servo5.write(number);
+    // if (number == 0 || number > 180) {
+    //   return;
+    // }
+
+    // servo1.write(number);
+    // servo2.write(number);
+    // servo3.write(number);
+    // servo4.write(number);
+    // servo5.write(number);
   }
 }
 
